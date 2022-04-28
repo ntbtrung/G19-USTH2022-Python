@@ -25,6 +25,7 @@ class Plane:
 class Flight:
     def __init__(self, f_code, 
     n_passenger, list_passenger, 
+    plane,
     t_depart, t_arrive, 
     p_depart, p_arrive,
     ):
@@ -34,10 +35,18 @@ class Flight:
         # To be sychronised with Passenger and Plane
         ###
 
+        self.plane = plane
+        ###
+        # Import plane name from f_code
+        # Used for printing out information about flight
+        ###
+
         self.n_passenger = n_passenger
         self.list_passenger = list_passenger
         ###
         # Variables to manage passenger
+        # n_passenger for number of passenger
+        # list_passenger is Dict/List/Array type for seats and passengers
         ###
 
         self.t_depart = t_depart
