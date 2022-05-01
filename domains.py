@@ -26,10 +26,6 @@ class Passenger:
             if seat[0] == tempchar:
                 if tempnum in range(1, 9):
                     return True
-                else:
-                    return False
-            else:
-                return False
     # Validate function for seat, the first letter in range A to Z, and seat number from 1 to 9
 
 
