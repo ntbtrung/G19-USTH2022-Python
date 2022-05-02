@@ -24,7 +24,7 @@ class Passenger:
         for x in range(0, len(string.ascii_uppercase)):
             tempchar = string.ascii_uppercase[x]
             if seat[0] == tempchar:
-                if tempnum in range(1, 9):
+                if tempnum in range(1, 6):
                     return True
     # Validate function for seat, the first letter in range A to Z, and seat number from 1 to 9
 
@@ -127,7 +127,7 @@ class Flight:
     # Validate function for time, used for both depart and arrive
     
     def seatlimit(self, n_passenger):
-        if n_passenger in range(0, 234):
+        if n_passenger in range(0, 120):
             return True
         else:
             return False

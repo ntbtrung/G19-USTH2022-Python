@@ -1,5 +1,3 @@
-from asyncio import constants
-from email.policy import default
 import domains
 import string
 
@@ -13,8 +11,6 @@ class Location:
         self.pays = string(pays)
         # French for country
 
-    EligibleCT = ("Hanoi", "Saigon")
-    EligiblePays = ("Vietnam")
 
     def validateCT(self, ct_list, ct):
         for x in range(0, len(ct_list)):
@@ -43,3 +39,54 @@ class Location:
     def export(self):
         return (self.ct +', ' + self.pays)
     # Somehow the most important function
+
+
+
+###
+# This class exists only to export a seat code, i.e.: F9, A4
+###
+class Seats:
+    def __init__(self, letter, num):
+        self.letter = string(letter)
+        self.num = int(num)
+
+    ###
+    # Setter and getters
+    ###    
+    def setLetter(self, l):
+        self.letter = l
+    def getLetter(self):
+        return self.letter
+    def setNum(self, n):
+        self.num = n
+    def getNum(self):
+        return self.num
+
+    def validateSeats(self, l, n):
+        for x in range(0, len(string.ascii_uppercase)):
+            tempstr = string.ascii_uppercase[x]
+            if l == tempstr:
+                if n in range(1, 6):
+                    return True
+
+    def export(self):
+        return (self.letter + str(self.num))
+    # Somehow the most important function, again
+
+    
+    
+
+def main():
+    EligibleCT = ("Hanoi", "Saigon")
+    # City tuple
+    EligiblePays = ("Vietnam")
+    # Country tuple
+
+    SeatArray = [[0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0]]
+    # Seat 2D array
+
+
+
+if __name__ == "__main__":
+    main()
